@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+// Instancio la classe Random()
+final random = Random();
+
 class HomePage extends StatefulWidget {
   const HomePage({
     super.key,
@@ -9,8 +12,6 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
-final random = Random();
 
 class _HomePageState extends State<HomePage> {
   int miRandomNumber = 1;
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double ancho = (MediaQuery.of(context).size.width);
+    double ancho = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -38,6 +39,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // Marcador
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -48,24 +50,16 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               const SizedBox(height: 50),
-              Text(
-                'Máquina',
-                style: estilo,
-              ),
-              Image.asset(
-                'images/dice-$miRandomNumber.png',
-                width: ancho * 0.5,
-              ),
+
+              // Secció dels daus
+              Text('Máquina', style: estilo),
+              Image.asset('images/dice-$miRandomNumber.png', width: ancho * 0.5),
               const SizedBox(height: 20.0),
-              Text(
-                'Jugador',
-                style: estilo,
-              ),
-              Image.asset(
-                'images/dice-$tuRandomNumber.png',
-                width: ancho * 0.5,
-              ),
+              Text('Jugador', style: estilo),
+              Image.asset('images/dice-$tuRandomNumber.png', width: ancho * 0.5),
               const SizedBox(height: 20.0),
+
+              // Boto per tirar
               Container(
                 decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
@@ -90,10 +84,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      textoBoton,
-                      style: estilo,
-                    ),
+                    child: Text(textoBoton, style: estilo),
                   ),
                 ),
               )
