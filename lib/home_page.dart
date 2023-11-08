@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                   Text('Jug: $ganaJ', style: estilo),
                 ],
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 50),
               Text(
                 'Máquina',
                 style: estilo,
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                 'images/dice-$miRandomNumber.png',
                 width: ancho * 0.5,
               ),
-              const SizedBox(height: 40.0),
+              const SizedBox(height: 20.0),
               Text(
                 'Jugador',
                 style: estilo,
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                 'images/dice-$tuRandomNumber.png',
                 width: ancho * 0.5,
               ),
-              const SizedBox(height: 40.0),
+              const SizedBox(height: 20.0),
               Container(
                 decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
